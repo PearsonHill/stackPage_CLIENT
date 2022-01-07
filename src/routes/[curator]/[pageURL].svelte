@@ -256,7 +256,7 @@ onMount(() => {
         </div>
 
    
-        <div class={section.sectionTitle !== 'notSet' ? "sectionBorder scroll" : 'scroll'}>
+        <div class={section.sectionTitle !== 'notSet' ? "sectionBorder scroll" : 'null'}>
         {#each section.entries as link}
 
             <div class="mainLink">
