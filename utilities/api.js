@@ -1,4 +1,4 @@
-const isDev = true;
+const isDev = false;
 
 const DEV_HOST = 'http://localhost:8000';
 const PROD_HOST = 'http://joose.azurewebsites.net'
