@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="theme-color" content="#333333">
+
+	%sapper.base%
+
+	<link rel="stylesheet" href="global.css">
+	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="apple-touch-icon" href="logo-192.png">
+
+	<!-- Sapper creates a <script> tag containing `src/client.js`
+	     and anything else it needs to hydrate the app and
+	     initialise the router -->
+	%sapper.scripts%
+
+	<!-- Sapper generates a <style> tag containing critical CSS
+	     for the current page. CSS for the rest of the app is
+	     lazily loaded when it precaches secondary pages -->
+	%sapper.styles%
+
+	<!-- This contains the contents of the <svelte:head> component, if
+	     the current page has one -->
+	%sapper.head%
+</head>
+<body>
+	<!-- The application will be rendered inside this element,
+	     because `src/client.js` references it -->
+	<div id="sapper">%sapper.html%</div>
+</body>
+</html>
+
+<style>
+
+body{
+		background: rgb(241, 241, 232)
+	}
+
+body:after{
+	content:"";
+	position:fixed; /* stretch a fixed position to the whole screen */
+	top:0;
+	height:100vh; /* fix for mobile browser address bar appearing disappearing */
+	left:0;
+	right:0;
+	z-index:-1; /* needed to keep in the background */
+	
+	/* background:linear-gradient(0deg, rgba(238, 196, 10, 0.40), rgba(236, 159, 4, 0.40)), url('sixteeneast.jpg') center center; */
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(250, 224, 173, 0.4)), url('paperBackground.jpg') center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	opacity:0.20;
+}
+
+</style>
