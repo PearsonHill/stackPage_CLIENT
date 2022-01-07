@@ -32,7 +32,9 @@ import MicroGraph from '../../components/MicroGraph.svelte'
 // bring in URL parameters
 export let pageURL, curator
 
-let showCal = true;
+let showCal = false;
+let viewCode = 'abc'
+let editCode = 'abc'
 
 
 let linkArray = []
@@ -201,7 +203,7 @@ onMount(() => {
 
 <div class="container">
 
-         hello {curator} !
+
 
 
     <div class="domino" on:click={()=>(showCal = !showCal)}>
@@ -212,7 +214,20 @@ onMount(() => {
 
         <MicroGraph linkArray={[...linkArray]} />
 
+        <input
+        class="linkURLInput"
+        type="text"
+        bind:value={viewCode}
+        placeholder="add code to view"/>
+        <input
+        class="linkURLInput"
+        type="text"
+        bind:value={editCode}
+        placeholder="add code to edit"/>
+
+
     {/if}
+
 
     <div class="addButton" >
 
@@ -241,7 +256,7 @@ onMount(() => {
         </div>
 
    
-        <div class={section.sectionTitle !== 'notSet' ? "sectionBorder scroll" : 'scroll'}>
+        <div class={section.sectionTitle !== 'notSet' ? "sectionBorder scroll" : 'null'}>
         {#each section.entries as link}
 
             <div class="mainLink">
