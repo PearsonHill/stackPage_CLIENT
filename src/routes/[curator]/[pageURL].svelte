@@ -356,34 +356,14 @@ onMount(() => {
         justify-content: center;
     }
 
-    .anchor{
-        align-self: center;
-        font-size: 40px;
-        margin-bottom: 10px;
-    }
+
     .domino{
         align-self: center;
         font-size: 100px;
         margin-bottom: 10px;
     }
 
-    .dominoSection{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
 
-    }
-    .dominoA{
-        align-self: center;
-        font-size: 100px;
-        background: white;
-    }
-    .dominoB{
-        align-self: center;
-        font-size: 100px;
-        margin-top: -50px;
-        background: white;
-    }
 
     .sectionBorder{
         /* border: 1px black solid; */
