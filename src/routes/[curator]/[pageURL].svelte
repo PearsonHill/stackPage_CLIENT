@@ -207,7 +207,7 @@ onMount(() => {
 
 
     <div class="domino" on:click={()=>(showCal = !showCal)}>
-        🁂
+        🀲
     </div>
     
     {#if showCal && linkArray[0]}
