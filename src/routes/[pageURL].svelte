@@ -101,8 +101,7 @@
     
     }, {})
     
-    
-    console.log('line 108', sectionsObj)
+
     
     
     return Object.keys(sectionsObj).reduce( (rArr, key, index, array) =>{
@@ -281,7 +280,12 @@
                     {#if link.linkLabel !== 'notSet'}
                     <div class="linkSection">
                         <div class="linkData alignLeft">
+
+                            {#if link.linkURL !== 'notSet'}
                             <a href={`${link.linkURL}`} target="_blank">{link.linkLabel}</a>
+                            {:else}
+                                {link.linkLabel}
+                            {/if}
                         </div>
     
                         <div class="smallDotsRow" on:click={toggleDotAdd}>
