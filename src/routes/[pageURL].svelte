@@ -113,7 +113,7 @@
     
     
     return Object.keys(sectionsObj).reduce( (rArr, key, index, array) =>{
-    
+     
     let sectionObj = {
     
         sectionTitle: key,
