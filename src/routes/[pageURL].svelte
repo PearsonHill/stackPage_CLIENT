@@ -35,6 +35,7 @@
     let showCal = false;
     let viewCode = 'view_password'
     let editCode = 'edit_password'
+    let dbMessage = null;
     
     
     let linkArray = []
@@ -52,6 +53,10 @@
     
         let URL =`v3/${case_action}/public/v1/${kernelID}/a/${eventID}/b/${outcomeID}/c/${epoch}/d/${threadID}`;
         return await api.post(URL, payload, token ).then((response) => {
+
+
+
+                response === 'success' ? getData() : dbMessage = 'update not completed - please try again'
         
            
                    
@@ -73,7 +78,10 @@
         return await api.post(URL, payload, token ).then((response) => {
            
            
-                   
+            response === 'success' ? (
+                getData(),
+                showDots = !showDots
+                 ): dbMessage = 'update not completed - please try again'
            
         }); 
     }
@@ -105,7 +113,7 @@
     
     
     return Object.keys(sectionsObj).reduce( (rArr, key, index, array) =>{
-    
+     
     let sectionObj = {
     
         sectionTitle: key,
@@ -208,8 +216,12 @@
         <div class="domino" on:click={()=>(showCal = !showCal)}>
             🀲
         </div>
+
+        <div class="dbMessage">
+            {dbMessage ? dbMessage : ''}
+        </div>
         
-        {#if showCal && linkArray[0]}
+        {#if showCal}
     
             <MicroGraph linkArray={[...linkArray]} />
     
@@ -262,13 +274,20 @@
     
        
             <div class="sectionTitle">
-                {section.sectionTitle !== 'notSet' ? section.sectionTitle : ''}  <div class="addItem">
+                {section.sectionTitle !== 'notSet' ? section.sectionTitle : ''} 
+                
+                {#if section.sectionTitle !== 'notSet'}
+                <div class="addItem">
                     <div class="addButton marginLeft">
+                   
                         <AddModal on:dispatchEntry={addLinkData} sectionTitle={section.sectionTitle}/>
+                   
                     </div>
                    
 
                 </div>
+
+                {/if}
             </div>
     
        
