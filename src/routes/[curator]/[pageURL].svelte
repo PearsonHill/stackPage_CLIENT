@@ -23,11 +23,11 @@
     <script>
     
     import { onMount } from "svelte";
-    import * as api from "../../utilities/api";
+    import * as api from "../../../utilities/api";
     
     // import components
-    import AddModal from '../components/AddModal.svelte'
-    import MicroGraph from '../components/MicroGraph.svelte'
+    import AddModal from '../../components/AddModal.svelte'
+    import MicroGraph from '../../components/MicroGraph.svelte'
     
     
     
