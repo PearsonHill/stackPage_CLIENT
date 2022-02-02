@@ -6,6 +6,8 @@
 
     export async function preload({ params }) {
         const { curator, pageURL } = params;
+
+        
     
        return {pageURL, curator}
     
@@ -31,6 +33,9 @@
     
     // bring in URL parameters
     export let pageURL, curator
+
+    pageURL = pageURL.toLowerCase()
+    // curator = curator.toLowerCase()
     
     let showCal = false;
     let viewCode = 'view_password'
@@ -50,6 +55,7 @@
         let epoch = pageURL
         let kernelID, outcomeID, threadID, eventID  = 'abc'
        
+        console.log('line 58', epoch, curator)
     
         let URL =`v3/${case_action}/public/v1/${kernelID}/a/${eventID}/b/${outcomeID}/c/${epoch}/d/${threadID}`;
         return await api.post(URL, payload, token ).then((response) => {
@@ -137,6 +143,8 @@
     let case_action = 'dot_getPageContent'
     let kernelID, outcomeID,token, threadID,eventID, kernelURL = 'abc'
     let epoch = pageURL
+
+    console.log('line 147', epoch)
     
     let URL =`v3/${case_action}/public/v1/${kernelID}/a/${eventID}/b/${outcomeID}/c/${epoch}/d/${threadID}`;
            return await api
