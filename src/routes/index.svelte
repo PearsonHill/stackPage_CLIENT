@@ -29,31 +29,36 @@
 </style>
 
 <svelte:head>
-	<title>naviPage</title>
+	<title>stackPage: stack progress, knowledge, gratitude</title>
 </svelte:head>
 
 <div class="container">
 
 	<div class="title">
-		naviPage: navigate through the noise - curate wisdom
+		stackPage: stack progress, knowledge, gratitude
 	</div>
 
 	<div class="anchor">
 
-		⚓️
+		🁂
 
 	</div>
 
 	<div class="explainer">
-		{`a naviPage allows anyone to quickly:
+		{`
+		
+		a stackPage allows anyone to quickly:
 		-  curate their favorite links associated with a particular subject
-		-  easily direct people to social media pages or referenceable content with a single URL`}
+		-  easily direct people to social media pages or referenceable content with a single URL
+		-  track habits and goals that you can share with others
+		
+		`}
 
 	</div>
 
 
 <div class="explainer">
-	ex: navi.page/crypto
+	ex: stackpage.io/crypto
 </div>
 
 

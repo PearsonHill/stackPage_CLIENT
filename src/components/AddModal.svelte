@@ -5,6 +5,7 @@
  
     export let data;
     export let location;
+    export let sectionTitle
      
     
           import { createEventDispatcher } from "svelte";    
@@ -15,7 +16,7 @@
     
     let entryData = data
 
-    let sectionTitle = null;
+    let sectionTitleInput = sectionTitle || null;
     let linkLabel = null;
     let linkURL = null; 
     let tags = []
@@ -55,7 +56,7 @@
 
     function dispatchEntry(){
       console.log('line 19', location)
-      dispatch('dispatchEntry', {linkLabel, linkURL, tags, sectionTitle})
+      dispatch('dispatchEntry', {linkLabel, linkURL, tags, sectionTitle: sectionTitleInput})
       return go = !go
     }
     
@@ -93,7 +94,7 @@
                 <input
                 class="linkSectionInput"
                 type="text"
-                bind:value={sectionTitle}
+                bind:value={sectionTitleInput}
                 placeholder="Add Section title..."/>
               </div>
        
